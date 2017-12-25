@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/19/2017学习总结/index.html">
 <meta property="og:site_name" content="Sunny">
 <meta property="og:description" content="1. 预解析js在运行之前会把带var和function关键字的提前声明，函数声明优先于变量声明，参数优先级高于变量声明。1234567console.log(a); // function a&amp;#123;alert(10);&amp;#125;var a = 2;console.log(a); // 2a(); // a is not a functionfunction a()&amp;#123;    al">
-<meta property="og:updated_time" content="2017-12-19T13:08:48.550Z">
+<meta property="og:updated_time" content="2017-12-25T13:22:20.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017学习总结">
 <meta name="twitter:description" content="1. 预解析js在运行之前会把带var和function关键字的提前声明，函数声明优先于变量声明，参数优先级高于变量声明。1234567console.log(a); // function a&amp;#123;alert(10);&amp;#125;var a = 2;console.log(a); // 2a(); // a is not a functionfunction a()&amp;#123;    al">
@@ -96,7 +96,15 @@
 <h5 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h5><p>通过函数生成一个新对象，此时this指向的就是这个对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">this</span>.x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> test();</span><br><span class="line">alert(o.x); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
 <h5 id="apply调用"><a href="#apply调用" class="headerlink" title="apply调用"></a>apply调用<br></h5><p>apply的作用是改变调用函数的对象，第一个参数就是表示改变后的调用该函数的对象，因此this指向的就是第一个参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o=&#123;&#125;;</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = test;</span><br><span class="line">o.m.apply(); <span class="comment">//0, this指的是全局对象</span></span><br></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o=&#123;&#125;;</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = test;</span><br><span class="line">o.m.apply(o); <span class="comment">//1, this指的是o</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-apply、call、bind"><a href="#4-apply、call、bind" class="headerlink" title="4. apply、call、bind"></a>4. apply、call、bind</h3><h3 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5. Promise"></a>5. Promise</h3><p>promise是异步编程的一种解决方案，简单来说promise是一个容器里面保存着某个未来才会结束的事件（通常是异步操作）的结果。有以下两个特点：</p>
+<h3 id="4-apply、call、bind"><a href="#4-apply、call、bind" class="headerlink" title="4. apply、call、bind"></a>4. apply、call、bind</h3><p>apply、call、bind三者均可改变函数的运行上下文（改变函数内部this指向）；如果使用call、apply，this指向的是函数的第一个参数。</p>
+<p><strong>不同点：</strong></p>
+<ul>
+<li><strong>apply</strong>  第二个参数是一个参数数组；</li>
+<li><strong>call</strong>  第二个参数及以后的参数需要一个一个传；</li>
+<li><strong>bind</strong>  创建一个新函数，称为绑定函数。绑定函数会以创建它时传入bind方法的第一个参数作为this，传入bind方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</li>
+</ul>
+<p><em>注：如果call和apply的第一个参数写的是null，那么this指向的是window对象。</em></p>
+<h3 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5. Promise"></a>5. Promise</h3><p>promise是异步编程的一种解决方案，简单来说promise是一个容器里面保存着某个未来才会结束的事件（通常是异步操作）的结果。有以下两个特点：</p>
 <ul>
 <li><p>对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。</p>
 </li>
@@ -166,7 +174,7 @@
 </ul>
 <p>2) ajaxStop (Global Event) – 针对一批请求<br><br>This global event is triggered if there are no more Ajax requests being processed.<br>当第一个ajax请求发送时触发ajaxStart()事件，当最后一个ajax请求完成时，触发ajaxStop()事件</p>
 <h3 id="14-jQuery对象和DOM对象"><a href="#14-jQuery对象和DOM对象" class="headerlink" title="14. jQuery对象和DOM对象"></a>14. jQuery对象和DOM对象</h3><ul>
-<li>jQuery对象就是对Dom对象的包装，jQuery对象时jQuery对象独有的，而jQuery对象是可以使用jQuery对象的方法的，而但是不能使用DOM对象的方法。<br>jQuery对象是一个数组对象，可以通过[index]的方法得到相应的DOM对象，也通过get(index)方法得到相应的DOM对象；</li>
+<li>jQuery对象就是对DOM对象的包装，jQuery对象是jQuery对象独有的，而jQuery对象是可以使用jQuery对象的方法的，而但是不能使用DOM对象的方法。<br>jQuery对象是一个数组对象，可以通过[index]的方法得到相应的DOM对象，也通过get(index)方法得到相应的DOM对象；</li>
 <li>对于一个DOM对象，只需要用$()把DOM对象包装起来，就可以获得一个jQuery对象了，方式为$(DOM对象)</li>
 </ul>
 <h3 id="15-Redux"><a href="#15-Redux" class="headerlink" title="15. Redux"></a>15. <a href="http://www.redux.org.cn/" target="_blank" rel="noopener">Redux</a></h3><p>所有的状态存放在Store。<br><br>组件每次重新渲染，都必须由状态变化引起。<br><br>用户在 UI 上发出action。<br><br>reducer函数接收action，然后根据当前的state，计算出新的state。<br></p>
@@ -181,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/2017学习总结/" data-id="cjbdnb7f60000i3x178ipa4cg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/19/2017学习总结/" data-id="cjbm8dtyp0000jsx1qzfo7uwz" class="article-share-link">Teilen</a>
       
       
     </footer>
