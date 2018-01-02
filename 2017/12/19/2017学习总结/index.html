@@ -1,127 +1,342 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>2017学习总结 | Sunny</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 预解析js在运行之前会把带var和function关键字的提前声明，函数声明优先于变量声明，参数优先级高于变量声明。1234567console.log(a); // function a&amp;#123;alert(10);&amp;#125;var a = 2;console.log(a); // 2a(); // a is not a functionfunction a()&amp;#123;    al">
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="隐式全局变量、明确定义的全局变量隐式全局变量和明确定义的全局变量之间的微小差异就是是否有通过delete操作符让变量未定义的能力  通过var创建的全局变量（任何函数之外的程序中创建的）是不能被删除的 无var创建的隐式全局变量是能被删除的  1234a = 1; // 隐式全局变量var b = 2; // 明确定义的全局变量delete a; // truedelete b; // false">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017学习总结">
-<meta property="og:url" content="http://yoursite.com/2017/12/19/2017学习总结/index.html">
+<meta property="og:title" content="JavaScript学习篇">
+<meta property="og:url" content="http://yoursite.com/2018/01/02/JavaScript学习篇/index.html">
 <meta property="og:site_name" content="Sunny">
-<meta property="og:description" content="1. 预解析js在运行之前会把带var和function关键字的提前声明，函数声明优先于变量声明，参数优先级高于变量声明。1234567console.log(a); // function a&amp;#123;alert(10);&amp;#125;var a = 2;console.log(a); // 2a(); // a is not a functionfunction a()&amp;#123;    al">
-<meta property="og:updated_time" content="2017-12-25T13:22:20.304Z">
+<meta property="og:description" content="隐式全局变量、明确定义的全局变量隐式全局变量和明确定义的全局变量之间的微小差异就是是否有通过delete操作符让变量未定义的能力  通过var创建的全局变量（任何函数之外的程序中创建的）是不能被删除的 无var创建的隐式全局变量是能被删除的  1234a = 1; // 隐式全局变量var b = 2; // 明确定义的全局变量delete a; // truedelete b; // false">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-02T13:45:22.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017学习总结">
-<meta name="twitter:description" content="1. 预解析js在运行之前会把带var和function关键字的提前声明，函数声明优先于变量声明，参数优先级高于变量声明。1234567console.log(a); // function a&amp;#123;alert(10);&amp;#125;var a = 2;console.log(a); // 2a(); // a is not a functionfunction a()&amp;#123;    al">
+<meta name="twitter:title" content="JavaScript学习篇">
+<meta name="twitter:description" content="隐式全局变量、明确定义的全局变量隐式全局变量和明确定义的全局变量之间的微小差异就是是否有通过delete操作符让变量未定义的能力  通过var创建的全局变量（任何函数之外的程序中创建的）是不能被删除的 无var创建的隐式全局变量是能被删除的  1234a = 1; // 隐式全局变量var b = 2; // 明确定义的全局变量delete a; // truedelete b; // false">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/02/JavaScript学习篇/"/>
+
+
+
+
+
+  <title>2017学习总结 | Sunny</title>
   
-    <link rel="alternate" href="/atom.xml" title="Sunny" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Sunny</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-2017学习总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/19/2017学习总结/" class="article-date">
-  <time datetime="2017-12-19T11:07:39.000Z" itemprop="datePublished">2017-12-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
-    <h1 class="article-title" itemprop="name">
-      2017学习总结
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunny</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/2017学习总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Sima">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2017学习总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T19:07:39+08:00">2017-12-19</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="1-预解析"><a href="#1-预解析" class="headerlink" title="1. 预解析"></a>1. 预解析</h3><p>js在运行之前会把带var和function关键字的提前声明，函数声明优先于变量声明，参数优先级高于变量声明。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// function a&#123;alert(10);&#125;</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 2</span></span><br><span class="line">a(); <span class="comment">// a is not a function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+      
+
+      
+        <h3 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h3><p>js在运行之前会把带var和function关键字的提前声明，函数声明优先于变量声明，参数优先级高于变量声明。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// function a&#123;alert(10);&#125;</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 2</span></span><br><span class="line">a(); <span class="comment">// a is not a function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 2</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// function()&#123;alert(10);&#125;</span></span><br><span class="line">b(); <span class="comment">// alert(10)</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2. 闭包"></a>2. 闭包</h3><p>闭包是一个可以读取其他函数内部变量的函数，由于只有函数内部的子函数才能读取函数内的变量，因此可以把闭包理解为“<b>定义在一个函数内部的函数</b>”。闭包的可以读取其他函数的内部变量，同时也可以让这些变量的值保存在内存中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> n=<span class="number">999</span>;</span><br><span class="line">　　nAdd=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;n+=<span class="number">1</span>&#125;</span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　alert(n);</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="keyword">return</span> f2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result=f1();</span><br><span class="line">result(); <span class="comment">// 999</span></span><br><span class="line">nAdd();</span><br><span class="line">result(); <span class="comment">// 1000</span></span><br></pre></td></tr></table></figure></p>
-<h6 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h6><p>1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
-<p>2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象使用，把闭包当作它的公用方法，把内部变量当作它的私有属性，这时一定要小心，不要随便改变父函数内部变量的值。</p>
-<h3 id="3-this"><a href="#3-this" class="headerlink" title="3. this"></a>3. this</h3><p><strong>this指向的是调用函数的那个对象。</strong></p>
-<h5 id="普通函数，this指向的是全局对象"><a href="#普通函数，this指向的是全局对象" class="headerlink" title="普通函数，this指向的是全局对象"></a>普通函数，this指向的是全局对象</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line">test(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<h5 id="作为对象方法调用"><a href="#作为对象方法调用" class="headerlink" title="作为对象方法调用"></a>作为对象方法调用</h5><p>函数可作为某个对象的方法调用，此时this指向的就是调用函数的对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = &#123;&#125;;</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = test;</span><br><span class="line">o.m(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h5><p>通过函数生成一个新对象，此时this指向的就是这个对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">this</span>.x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> test();</span><br><span class="line">alert(o.x); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="apply调用"><a href="#apply调用" class="headerlink" title="apply调用"></a>apply调用<br></h5><p>apply的作用是改变调用函数的对象，第一个参数就是表示改变后的调用该函数的对象，因此this指向的就是第一个参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o=&#123;&#125;;</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = test;</span><br><span class="line">o.m.apply(); <span class="comment">//0, this指的是全局对象</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包是一个可以读取其他函数内部变量的函数，由于只有函数内部的子函数才能读取函数内的变量，因此可以把闭包理解为“<b>定义在一个函数内部的函数</b>”。闭包的可以读取其他函数的内部变量，同时也可以让这些变量的值保存在内存中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> n=<span class="number">999</span>;</span><br><span class="line">　　nAdd=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;n+=<span class="number">1</span>&#125;</span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　alert(n);</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="keyword">return</span> f2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result=f1();</span><br><span class="line">result(); <span class="comment">// 999</span></span><br><span class="line">nAdd();</span><br><span class="line">result(); <span class="comment">// 1000</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注意点:</strong></p>
+<ul>
+<li>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</li>
+<li>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象使用，把闭包当作它的公用方法，把内部变量当作它的私有属性，这时一定要小心，不要随便改变父函数内部变量的值。</li>
+</ul>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p><strong>this指向的是调用函数的那个对象。</strong></p>
+<p><strong>普通函数，this指向的是全局对象</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line">test(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>作为对象方法调用</strong><br>函数可作为某个对象的方法调用，此时this指向的就是调用函数的对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = &#123;&#125;;</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = test;</span><br><span class="line">o.m(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>作为构造函数调用</strong><br>通过函数生成一个新对象，此时this指向的就是这个对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">this</span>.x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> test();</span><br><span class="line">alert(o.x); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>apply调用</strong><br>apply的作用是改变调用函数的对象，第一个参数就是表示改变后的调用该函数的对象，因此this指向的就是第一个参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o=&#123;&#125;;</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = test;</span><br><span class="line">o.m.apply(); <span class="comment">//0, this指的是全局对象</span></span><br></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o=&#123;&#125;;</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = test;</span><br><span class="line">o.m.apply(o); <span class="comment">//1, this指的是o</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-apply、call、bind"><a href="#4-apply、call、bind" class="headerlink" title="4. apply、call、bind"></a>4. apply、call、bind</h3><p>apply、call、bind三者均可改变函数的运行上下文（改变函数内部this指向）；如果使用call、apply，this指向的是函数的第一个参数。</p>
+<h3 id="apply、call、bind"><a href="#apply、call、bind" class="headerlink" title="apply、call、bind"></a>apply、call、bind</h3><p>apply、call、bind三者均可改变函数的运行上下文（改变函数内部this指向）；如果使用call、apply，this指向的是函数的第一个参数。</p>
 <p><strong>不同点：</strong></p>
 <ul>
 <li><strong>apply</strong>  第二个参数是一个参数数组；</li>
 <li><strong>call</strong>  第二个参数及以后的参数需要一个一个传；</li>
-<li><strong>bind</strong>  创建一个新函数，称为绑定函数。绑定函数会以创建它时传入bind方法的第一个参数作为this，传入bind方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</li>
+<li><strong>bind</strong>  创建一个新函数，称为绑定函数。绑定函数会以创建它时传入bind方法的第一个参数作为this，传入bind方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。<br><em>注：如果call和apply的第一个参数写的是null，那么this指向的是window对象。</em></li>
 </ul>
-<p><em>注：如果call和apply的第一个参数写的是null，那么this指向的是window对象。</em></p>
-<h3 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5. Promise"></a>5. Promise</h3><p>promise是异步编程的一种解决方案，简单来说promise是一个容器里面保存着某个未来才会结束的事件（通常是异步操作）的结果。有以下两个特点：</p>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>promise是异步编程的一种解决方案，简单来说promise是一个容器里面保存着某个未来才会结束的事件（通常是异步操作）的结果。有以下两个特点：</p>
 <ul>
-<li><p>对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。</p>
-</li>
-<li><p>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。</p>
-</li>
+<li>对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。</li>
+<li>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。</li>
 </ul>
-<h3 id="6-Generator"><a href="#6-Generator" class="headerlink" title="6. Generator"></a>6. Generator</h3><p>generator是ES6提供的一种异步编程的解决方案。语法上可以理解为一个<em>状态机</em>，封装了多个内部状态，执行generator会返回一个遍历器对象，返回的遍历器对象可以依次遍历generator函数内部的每个状态。</p>
-<p>Generator 函数是一个普通函数，但是有两个特征：<br><br>一是，function关键字与函数名之间有一个星号*；<br><br>二是，函数体内部使用yield表达式，定义不同的内部状态。<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hw = helloWorldGenerator(); <span class="comment">// hw是遍历器对象</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h3><p>generator是ES6提供的一种异步编程的解决方案。语法上可以理解为一个<em>状态机</em>，封装了多个内部状态，执行generator会返回一个遍历器对象，返回的遍历器对象可以依次遍历generator函数内部的每个状态。</p>
+<p>Generator 函数是一个普通函数，但是有两个特征：<br>一是，function关键字与函数名之间有一个星号*；<br>二是，函数体内部使用yield表达式，定义不同的内部状态。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hw = helloWorldGenerator(); <span class="comment">// hw是遍历器对象</span></span><br></pre></td></tr></table></figure></p>
 <p>任意一个对象的Symbol.iterator方法，等于该对象的遍历器生成函数，调用该函数会返回该对象的一个遍历器对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myIterable = &#123;&#125;;</span><br><span class="line">myIterable[<span class="built_in">Symbol</span>.iterator] = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">3</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">[...myIterable] <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="7-伪类、伪元素"><a href="#7-伪类、伪元素" class="headerlink" title="7. 伪类、伪元素"></a>7. 伪类、伪元素</h3><p>伪类和伪元素的根本区别在于：是否创建了新元素（抽象）。</p>
-<p>1）伪类：元素处于某个状态时，为其添加对应的样式，这个状态是根据用户行为动态变化的，如：:active, :hover等。</p>
-<p>2）伪元素：某个元素的子元素，逻辑上不存在，不存在于实际文档树中。如： :before, :after</p>
-<h3 id="8-static、relative、absolute、fixed定位"><a href="#8-static、relative、absolute、fixed定位" class="headerlink" title="8. static、relative、absolute、fixed定位"></a>8. static、relative、absolute、fixed定位</h3><p><strong>文档流：将窗体自上而下分成一行行，并将每行按照从左到右的顺序排列元素。<br><br>浮动、固定定位(fixed)和绝对定位(absolute)会使元素脱离文档流。</strong></p>
+<h3 id="伪类、伪元素"><a href="#伪类、伪元素" class="headerlink" title="伪类、伪元素"></a>伪类、伪元素</h3><p>伪类和伪元素的根本区别在于：是否创建了新元素（抽象）。</p>
+<ul>
+<li>伪类：元素处于某个状态时，为其添加对应的样式，这个状态是根据用户行为动态变化的，如：:active, :hover等。</li>
+<li>伪元素：某个元素的子元素，逻辑上不存在，不存在于实际文档树中。如： :before, :after</li>
+</ul>
+<h3 id="static、relative、absolute、fixed定位"><a href="#static、relative、absolute、fixed定位" class="headerlink" title="static、relative、absolute、fixed定位"></a>static、relative、absolute、fixed定位</h3><p>**文档流：将窗体自上而下分成一行行，并将每行按照从左到右的顺序排列元素。</p>
+<p>浮动、固定定位(fixed)和绝对定位(absolute)会使元素脱离文档流。**</p>
 <ul>
 <li><p><strong>静态定位static：</strong> 默认值。没有定位，元素出现在正常的流中，忽略top，right，bottom，left或z-index声明。</p>
 </li>
-<li><p><strong>相对定位relative：</strong> 生成相对定位的元素，通过top，right，bottom，left设置相对于其正常位置进行定位，不可通过z-index进行层次分级。相对本身的原始位置发生位移且保持文档流，占空间。<br><br><em>当position属性值为relative时对象原来占有的位置保留，其后面的对象按原来文档流仍然保持原来的位置。</em></p>
+<li><p><strong>相对定位relative：</strong> 生成相对定位的元素，通过top，right，bottom，left设置相对于其正常位置进行定位，不可通过z-index进行层次分级。相对本身的原始位置发生位移且保持文档流，占空间。<br><em>当position属性值为relative时对象原来占有的位置保留，其后面的对象按原来文档流仍然保持原来的位置。</em></p>
 <ul>
 <li>top的值表示对象相对原位置向下偏移的距离，bottom的值表示对象相对原位置向上偏移的距离，两者同时存在时，只有top起作用。</li>
 <li>left的值表示对象相对原位置向右偏移的距离，right的值表示对象相对原位置向左偏移的距离，两者同时存在时，只有left起作用。</li>
@@ -132,157 +347,421 @@
 <li><p><strong>固定定位fixed：</strong> 元素脱离文档流，元素根据窗口为原点进行定位。</p>
 </li>
 </ul>
-<h3 id="9-白屏和FOUC无样式内容闪烁"><a href="#9-白屏和FOUC无样式内容闪烁" class="headerlink" title="9. 白屏和FOUC无样式内容闪烁"></a>9. 白屏和FOUC无样式内容闪烁</h3><p>不同浏览器对CSS和HTML处理方式不同，有的是等待CSS加载完成之后，对HTML元素进行渲染和展示（<em>白屏问题</em>）。有的是先对HTML元素进行展示，然后等待CSS加载完成之后重新对样式进行修改（<em>FOUC无样式内容闪烁</em>）</p>
-<h3 id="10-lt-script-gt-、-lt-script-async-gt-、-lt-script-defer-gt"><a href="#10-lt-script-gt-、-lt-script-async-gt-、-lt-script-defer-gt" class="headerlink" title="10. &lt;script&gt;、&lt;script async&gt;、&lt;script defer&gt;"></a>10. <code>&lt;script&gt;、&lt;script async&gt;、&lt;script defer&gt;</code></h3><ul>
-<li><p><code>&lt;script&gt;</code> 阻塞方式，js加载并执行完之后才会继续进行DOM解析；</p>
-</li>
-<li><p><code>&lt;script async&gt;</code> 异步加载，js加载完之后立即执行；</p>
-</li>
-<li><p><code>&lt;script defer&gt;</code> 异步加载，所有元素解析完成之后执行，浏览器遇到执行。</p>
-</li>
+<h3 id="白屏和FOUC无样式内容闪烁"><a href="#白屏和FOUC无样式内容闪烁" class="headerlink" title="白屏和FOUC无样式内容闪烁"></a>白屏和FOUC无样式内容闪烁</h3><p>不同浏览器对CSS和HTML处理方式不同，有的是等待CSS加载完成之后，对HTML元素进行渲染和展示（<em>白屏问题</em>）。有的是先对HTML元素进行展示，然后等待CSS加载完成之后重新对样式进行修改（<em>FOUC无样式内容闪烁</em>）</p>
+<h3 id="lt-script-gt-、-lt-script-async-gt-、-lt-script-defer-gt"><a href="#lt-script-gt-、-lt-script-async-gt-、-lt-script-defer-gt" class="headerlink" title="&lt;script&gt;、&lt;script async&gt;、&lt;script defer&gt;"></a><code>&lt;script&gt;、&lt;script async&gt;、&lt;script defer&gt;</code></h3><ul>
+<li><code>&lt;script&gt;</code> 阻塞方式，js加载并执行完之后才会继续进行DOM解析；</li>
+<li><code>&lt;script async&gt;</code> 异步加载，js加载完之后立即执行；</li>
+<li><code>&lt;script defer&gt;</code> 异步加载，所有元素解析完成之后执行，浏览器遇到执行。</li>
 </ul>
-<h3 id="11-CSS命名规范，BEM-Block-Element-Modifier"><a href="#11-CSS命名规范，BEM-Block-Element-Modifier" class="headerlink" title="11. CSS命名规范，BEM - Block, Element, Modifier"></a>11. CSS命名规范，BEM - Block, Element, Modifier</h3><p>BEM其实是块（block）、元素（element）、修饰符（modifier）的缩写，利用不同的区块，功能以及样式来给元素命名。<br>B – 某一块展示、功能区域，如 nav。<br><br>E – 这块展示、功能区域里的某个元素，如 nav_item。<br><br>M – 某个元素或某个块的状态，如 nav–hide, nav_item–open。<br></p>
-<h3 id="12-Babel"><a href="#12-Babel" class="headerlink" title="12. Babel"></a>12. <a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="noopener">Babel</a></h3><p>Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。<br></p>
-<h5 id="配置文件-babelrc"><a href="#配置文件-babelrc" class="headerlink" title="配置文件.babelrc"></a>配置文件.babelrc</h5><p>Babel的配置文件是.babelrc，存放在项目根目录下，用来设置转码规则以及插件，如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"presets"</span>: [</span><br><span class="line">		<span class="string">"es2015"</span>,</span><br><span class="line">		<span class="string">"react"</span></span><br><span class="line">	],</span><br><span class="line">	<span class="string">"plugins"</span>:[]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="CSS命名规范，BEM-Block-Element-Modifier"><a href="#CSS命名规范，BEM-Block-Element-Modifier" class="headerlink" title="CSS命名规范，BEM - Block, Element, Modifier"></a>CSS命名规范，BEM - Block, Element, Modifier</h3><p>BEM其实是块（block）、元素（element）、修饰符（modifier）的缩写，利用不同的区块，功能以及样式来给元素命名。<br>B – 某一块展示、功能区域，如 nav。<br>E – 这块展示、功能区域里的某个元素，如 nav_item。<br>M – 某个元素或某个块的状态，如 nav–hide, nav_item–open。</p>
+<h3 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a><a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="noopener">Babel</a></h3><p>Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。</p>
+<p><strong>配置文件.babelrc</strong><br>Babel的配置文件是.babelrc，存放在项目根目录下，用来设置转码规则以及插件，如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"presets"</span>: [</span><br><span class="line">		<span class="string">"es2015"</span>,</span><br><span class="line">		<span class="string">"react"</span></span><br><span class="line">	],</span><br><span class="line">	<span class="string">"plugins"</span>:[]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>presets用来设定转码规则，官方提供以下规则集：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ES2015转码规则</span><br><span class="line"><span class="meta">$</span> npm install --save-dev babel-preset-es2015</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> react转码规则</span><br><span class="line"><span class="meta">$</span> npm install --save-dev babel-preset-react</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个</span><br><span class="line"><span class="meta">$</span> npm install --save-dev babel-preset-stage-0</span><br><span class="line"><span class="meta">$</span> npm install --save-dev babel-preset-stage-1</span><br><span class="line"><span class="meta">$</span> npm install --save-dev babel-preset-stage-2</span><br><span class="line"><span class="meta">$</span> npm install --save-dev babel-preset-stage-3</span><br></pre></td></tr></table></figure></p>
-<h5 id="命令行转码babel-cli"><a href="#命令行转码babel-cli" class="headerlink" title="命令行转码babel-cli"></a>命令行转码babel-cli</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 转码结果输出到标准输出</span><br><span class="line"><span class="meta">$</span> babel example.js</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 转码结果写入一个文件</span><br><span class="line"><span class="meta">#</span> --out-file 或 -o 参数指定输出文件</span><br><span class="line"><span class="meta">$</span> babel example.js --out-file compiled.js</span><br><span class="line"><span class="meta">#</span> 或者</span><br><span class="line"><span class="meta">$</span> babel example.js -o compiled.js</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 整个目录转码</span><br><span class="line"><span class="meta">#</span> --out-dir 或 -d 参数指定输出目录</span><br><span class="line"><span class="meta">$</span> babel src --out-dir lib</span><br><span class="line"><span class="meta">#</span> 或者</span><br><span class="line"><span class="meta">$</span> babel src -d lib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> -s 参数生成source map文件</span><br><span class="line"><span class="meta">$</span> babel src -d lib -s</span><br></pre></td></tr></table></figure>
-<h5 id="babel-node"><a href="#babel-node" class="headerlink" title="babel-node"></a>babel-node</h5><p>babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境。它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。</p>
-<h5 id="babel-register"><a href="#babel-register" class="headerlink" title="babel-register"></a>babel-register</h5><p>babel-register改写require命令，为它加上一个钩子，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。<br>babel-register只会对require命令加载的文件转码，而不会对当前文件转码。另外，由于它是实时转码，所以只适合在开发环境使用。</p>
-<h5 id="babel-core"><a href="#babel-core" class="headerlink" title="babel-core"></a>babel-core</h5><h5 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill</h5><p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。<br><br>举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
-<h3 id="13-Ajax-Events"><a href="#13-Ajax-Events" class="headerlink" title="13. Ajax Events"></a>13. Ajax Events</h3><p>有两种类型的事件：</p>
+<p><strong>命令行转码babel-cli</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 转码结果输出到标准输出</span><br><span class="line"><span class="meta">$</span> babel example.js</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 转码结果写入一个文件</span><br><span class="line"><span class="meta">#</span> --out-file 或 -o 参数指定输出文件</span><br><span class="line"><span class="meta">$</span> babel example.js --out-file compiled.js</span><br><span class="line"><span class="meta">#</span> 或者</span><br><span class="line"><span class="meta">$</span> babel example.js -o compiled.js</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 整个目录转码</span><br><span class="line"><span class="meta">#</span> --out-dir 或 -d 参数指定输出目录</span><br><span class="line"><span class="meta">$</span> babel src --out-dir lib</span><br><span class="line"><span class="meta">#</span> 或者</span><br><span class="line"><span class="meta">$</span> babel src -d lib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> -s 参数生成source map文件</span><br><span class="line"><span class="meta">$</span> babel src -d lib -s</span><br></pre></td></tr></table></figure></p>
+<p><strong>babel-node</strong><br>babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境。它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。</p>
+<p><strong>babel-register</strong><br>babel-register改写require命令，为它加上一个钩子，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。<br>babel-register只会对require命令加载的文件转码，而不会对当前文件转码。另外，由于它是实时转码，所以只适合在开发环境使用。</p>
+<p><strong>babel-core</strong></p>
+<p><strong>babel-polyfill</strong><br>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。<br>举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
+<h3 id="Ajax-Events"><a href="#Ajax-Events" class="headerlink" title="Ajax Events"></a>Ajax Events</h3><p>有两种类型的事件：</p>
 <ul>
 <li><p>局部事件（Local Events）：通过$.ajax来调用并且分配</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  beforeSend: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// Handle the beforeSend event</span></span><br><span class="line">  &#125;,</span><br><span class="line">  complete: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// Handle the complete event</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ......</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>全局事件（Global Events）：可以用bind来绑定，用unbind来取消绑定<br><br>These events are triggered on the document, calling any handlers which may be listening. You can listen for these events like so:</p>
+<li><p>全局事件（Global Events）：可以用bind来绑定，用unbind来取消绑定</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).bind(<span class="string">"ajaxSend"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   $(<span class="string">"#loading"</span>).show();</span><br><span class="line"> &#125;).bind(<span class="string">"ajaxComplete"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   $(<span class="string">"#loading"</span>).hide();</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
-<p>Global events can be disabled for a particular Ajax request by passing in the global option, like so:</p>
+</li>
+<li><p>全局事件可以通过设置global选项禁用</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  url: <span class="string">"test.html"</span>,</span><br><span class="line">  global: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="Events："><a href="#Events：" class="headerlink" title="Events："></a>Events：</h5><p>1) ajaxStart (Global Event) – 针对一批请求<br></p>
-<p>This event is triggered if an Ajax request is started and no other Ajax requests are currently running.</p>
+<p><strong>事件：</strong></p>
 <ul>
-<li>beforeSend (Local Event)<br>This event, which is triggered before an Ajax request is started, allows you to modify the XMLHttpRequest object (setting additional headers, if need be.)</li>
-<li>ajaxSend (Global Event)<br>This global event is also triggered before the request is run.</li>
-<li>success (Local Event)<br>This event is only called if the request was successful (no errors from the server, no errors with the data).</li>
-<li>ajaxSuccess (Global Event)<br>This event is also only called if the request was successful.</li>
-<li>error (Local Event)<br>This event is only called if an error occurred with the request (you can never have both an error and a success callback with a request).</li>
-<li>ajaxError (Global Event)<br>This global event behaves the same as the local error event.</li>
-<li>complete (Local Event)<br>This event is called regardless of if the request was successful, or not. You will always receive a complete callback, even for synchronous requests.</li>
-<li>ajaxComplete (Global Event)<br>This event behaves the same as the complete event and will be triggered every time an Ajax request finishes.</li>
+<li><p>ajaxStart (全局事件) – 针对一批请求</p>
+<ul>
+<li>beforeSend (局部事件)</li>
+<li>ajaxSend (全局事件)</li>
+<li>success (局部事件)</li>
+<li>ajaxSuccess (全局事件)</li>
+<li>error (局部事件)</li>
+<li>ajaxError (全局事件)</li>
+<li>complete (局部事件)</li>
+<li>ajaxComplete (全局事件)</li>
 </ul>
-<p>2) ajaxStop (Global Event) – 针对一批请求<br><br>This global event is triggered if there are no more Ajax requests being processed.<br>当第一个ajax请求发送时触发ajaxStart()事件，当最后一个ajax请求完成时，触发ajaxStop()事件</p>
-<h3 id="14-jQuery对象和DOM对象"><a href="#14-jQuery对象和DOM对象" class="headerlink" title="14. jQuery对象和DOM对象"></a>14. jQuery对象和DOM对象</h3><ul>
+</li>
+<li><p>ajaxStop (全局事件) – 针对一批请求<br>当第一个ajax请求发送时触发ajaxStart()事件，当最后一个ajax请求完成时，触发ajaxStop()事件</p>
+</li>
+</ul>
+<h3 id="jQuery对象和DOM对象"><a href="#jQuery对象和DOM对象" class="headerlink" title="jQuery对象和DOM对象"></a>jQuery对象和DOM对象</h3><ul>
 <li>jQuery对象就是对DOM对象的包装，jQuery对象是jQuery对象独有的，而jQuery对象是可以使用jQuery对象的方法的，而但是不能使用DOM对象的方法。<br>jQuery对象是一个数组对象，可以通过[index]的方法得到相应的DOM对象，也通过get(index)方法得到相应的DOM对象；</li>
 <li>对于一个DOM对象，只需要用$()把DOM对象包装起来，就可以获得一个jQuery对象了，方式为$(DOM对象)</li>
 </ul>
-<h3 id="15-Redux"><a href="#15-Redux" class="headerlink" title="15. Redux"></a>15. <a href="http://www.redux.org.cn/" target="_blank" rel="noopener">Redux</a></h3><p>所有的状态存放在Store。<br><br>组件每次重新渲染，都必须由状态变化引起。<br><br>用户在 UI 上发出action。<br><br>reducer函数接收action，然后根据当前的state，计算出新的state。<br></p>
-<h4 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则:"></a>三大原则:</h4><ul>
-<li>单一数据源<br><br>整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。</li>
-<li><p>State是只读的<br><br>惟一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。</p>
-</li>
-<li><p>使用纯函数来执行修改<br><br>为了描述 action 如何改变 state tree ，你需要编写 reducers。Reducer 只是一些纯函数，它接收先前的 state 和 action，并返回新的 state。</p>
-</li>
+<h3 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a><a href="http://www.redux.org.cn/" target="_blank" rel="noopener">Redux</a></h3><p>所有的状态存放在Store；<br>组件每次重新渲染，都必须由状态变化引起；<br>用户在 UI 上发出action；<br>reducer函数接收action，然后根据当前的state，计算出新的state。</p>
+<p><strong>三大原则:</strong></p>
+<ul>
+<li>单一数据源<br>整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。</li>
+<li>State是只读的<br>惟一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。</li>
+<li>使用纯函数来执行修改<br>为了描述 action 如何改变 state tree ，你需要编写 reducers。Reducer 只是一些纯函数，它接收先前的 state 和 action，并返回新的 state。</li>
 </ul>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/2017学习总结/" data-id="cjbm8dtyp0000jsx1qzfo7uwz" class="article-share-link">Teilen</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/Babel/" rel="tag"># Babel</a>
+          
+            <a href="/tags/Redux/" rel="tag"># Redux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/02/JavaScript学习篇/" rel="prev" title="JavaScript学习篇">
+                JavaScript学习篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
       
       
     </footer>
   </div>
   
-    
-<nav id="article-nav">
   
   
-    <a href="/2017/12/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+  </article>
 
-  
-</article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    <div class="post-spread">
+      
     </div>
   </div>
 
 
+          </div>
+          
+
+
+          
+
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
+
+
+
+        </div>
         
-          <li>
-            <a href="/2017/12/19/2017学习总结/">2017学习总结</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/13/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-  
-</aside>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Sunny Sima</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#预解析"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x9884;&#x89E3;&#x6790;" class="headerlink" title="&#x9884;&#x89E3;&#x6790;"></a>&#x9884;&#x89E3;&#x6790;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x95ED;&#x5305;" class="headerlink" title="&#x95ED;&#x5305;"></a>&#x95ED;&#x5305;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">3.</span> <span class="nav-text"><a href="#this" class="headerlink" title="this"></a>this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply、call、bind"><span class="nav-number">4.</span> <span class="nav-text"><a href="#apply&#x3001;call&#x3001;bind" class="headerlink" title="apply&#x3001;call&#x3001;bind"></a>apply&#x3001;call&#x3001;bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">5.</span> <span class="nav-text"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator"><span class="nav-number">6.</span> <span class="nav-text"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪类、伪元素"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x4F2A;&#x7C7B;&#x3001;&#x4F2A;&#x5143;&#x7D20;" class="headerlink" title="&#x4F2A;&#x7C7B;&#x3001;&#x4F2A;&#x5143;&#x7D20;"></a>&#x4F2A;&#x7C7B;&#x3001;&#x4F2A;&#x5143;&#x7D20;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static、relative、absolute、fixed定位"><span class="nav-number">8.</span> <span class="nav-text"><a href="#static&#x3001;relative&#x3001;absolute&#x3001;fixed&#x5B9A;&#x4F4D;" class="headerlink" title="static&#x3001;relative&#x3001;absolute&#x3001;fixed&#x5B9A;&#x4F4D;"></a>static&#x3001;relative&#x3001;absolute&#x3001;fixed&#x5B9A;&#x4F4D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#白屏和FOUC无样式内容闪烁"><span class="nav-number">9.</span> <span class="nav-text"><a href="#&#x767D;&#x5C4F;&#x548C;FOUC&#x65E0;&#x6837;&#x5F0F;&#x5185;&#x5BB9;&#x95EA;&#x70C1;" class="headerlink" title="&#x767D;&#x5C4F;&#x548C;FOUC&#x65E0;&#x6837;&#x5F0F;&#x5185;&#x5BB9;&#x95EA;&#x70C1;"></a>&#x767D;&#x5C4F;&#x548C;FOUC&#x65E0;&#x6837;&#x5F0F;&#x5185;&#x5BB9;&#x95EA;&#x70C1;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-script-gt-、-lt-script-async-gt-、-lt-script-defer-gt"><span class="nav-number">10.</span> <span class="nav-text"><a href="#lt-script-gt-&#x3001;-lt-script-async-gt-&#x3001;-lt-script-defer-gt" class="headerlink" title="&lt;script&gt;&#x3001;&lt;script async&gt;&#x3001;&lt;script defer&gt;"></a><code>&lt;script&gt;&#x3001;&lt;script async&gt;&#x3001;&lt;script defer&gt;</code></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS命名规范，BEM-Block-Element-Modifier"><span class="nav-number">11.</span> <span class="nav-text"><a href="#CSS&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF0C;BEM-Block-Element-Modifier" class="headerlink" title="CSS&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF0C;BEM - Block, Element, Modifier"></a>CSS&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF0C;BEM - Block, Element, Modifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Babel"><span class="nav-number">12.</span> <span class="nav-text"><a href="#Babel" class="headerlink" title="Babel"></a><a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="noopener">Babel</a></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax-Events"><span class="nav-number">13.</span> <span class="nav-text"><a href="#Ajax-Events" class="headerlink" title="Ajax Events"></a>Ajax Events</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery对象和DOM对象"><span class="nav-number">14.</span> <span class="nav-text"><a href="#jQuery&#x5BF9;&#x8C61;&#x548C;DOM&#x5BF9;&#x8C61;" class="headerlink" title="jQuery&#x5BF9;&#x8C61;&#x548C;DOM&#x5BF9;&#x8C61;"></a>jQuery&#x5BF9;&#x8C61;&#x548C;DOM&#x5BF9;&#x8C61;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redux"><span class="nav-number">15.</span> <span class="nav-text"><a href="#Redux" class="headerlink" title="Redux"></a><a href="http://www.redux.org.cn/" target="_blank" rel="noopener">Redux</a></span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunny Sima</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
